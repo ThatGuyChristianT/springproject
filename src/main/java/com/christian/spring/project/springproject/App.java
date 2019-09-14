@@ -13,7 +13,9 @@ public class App {
 				"com/christian/spring/project/bean/beans.xml");
 
 		Person person = (Person) applicationContext.getBean("person");
+		Address address = (Address) applicationContext.getBean("address");
 		System.out.println(person);
+		System.out.println(address);
 		((ClassPathXmlApplicationContext) applicationContext).close();
 	}
 }

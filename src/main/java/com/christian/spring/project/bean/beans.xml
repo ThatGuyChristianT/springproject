@@ -12,6 +12,12 @@
 			name="name">
 		</constructor-arg>
 		<property name="taxId" value = "321"></property>
+		<property name="address" ref="address"></property>
 	</bean>
 
+	<bean id="address"
+		class="com.christian.spring.project.springproject.Address">
+	<constructor-arg name="street" value="123 Sesame Street"></constructor-arg>
+	<constructor-arg name="postCode" value="M2K21E"></constructor-arg>
+	</bean>
 </beans>
