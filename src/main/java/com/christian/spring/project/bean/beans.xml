@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="start" default-destroy-method="teardown">
 
 
 	<bean id="person"
 		class="com.christian.spring.project.springproject.Person"
-		scope="prototype">
+		scope="singleton" init-method="onCreate" destroy-method="onTeardown">
 		<constructor-arg value="777" index="0" name="id" type="int">
 		</constructor-arg>
-		<constructor-arg value="Christian" index="1" type="String"
-			name="name">
+		<constructor-arg value="Christian" index="1" type="String" name="name">
 		</constructor-arg>
-		<property name="taxId" value = "321"></property>
+		<property name="taxId" value="321"></property>
 		<property name="address" ref="address"></property>
 	</bean>
-
+	
 	<bean id="address"
 		class="com.christian.spring.project.springproject.Address">
 	<constructor-arg name="street" value="123 Sesame Street"></constructor-arg>
 	<constructor-arg name="postCode" value="M2K21E"></constructor-arg>
 	</bean>
+	
+
+	
 </beans>
