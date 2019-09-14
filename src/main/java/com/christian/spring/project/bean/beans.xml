@@ -5,7 +5,8 @@
 
 
 	<bean id="person"
-		class="com.christian.spring.project.springproject.Person">
+		class="com.christian.spring.project.springproject.Person"
+		scope="prototype">
 		<constructor-arg value="777" index="0" name="id" type="int">
 		</constructor-arg>
 		<constructor-arg value="Christian" index="1" type="String"
