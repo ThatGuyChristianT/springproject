@@ -18,6 +18,14 @@ public class Person {
 		this.name = name;
 	}
 
+	public void onCreate() {
+		System.out.println("Created person " + this);
+	}
+
+	public void onTeardown() {
+		System.out.println("Teardown method for " + this);
+	}
+
 	public void speak() {
 		System.out.println("Hello, I'm a person");
 	}

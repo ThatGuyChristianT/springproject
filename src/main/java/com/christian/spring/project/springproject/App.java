@@ -14,8 +14,10 @@ public class App {
 
 		Person person = (Person) applicationContext.getBean("person");
 		Person person2 = (Person) applicationContext.getBean("person");
+
 		person2.setTaxId(5342);
 		System.out.println(person2);
+
 		((ClassPathXmlApplicationContext) applicationContext).close();
 	}
 }

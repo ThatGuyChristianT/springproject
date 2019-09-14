@@ -11,6 +11,15 @@ public class Address {
 		this.postCode = postCode;
 	}
 
+	public void start() {
+		System.out.println("Bean created" + this);
+
+	}
+
+	public void teardown() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Address [street=" + street + ", postCode=" + postCode + "]";
