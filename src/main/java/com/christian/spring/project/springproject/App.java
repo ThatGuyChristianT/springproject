@@ -13,7 +13,7 @@ public class App {
 				"com/christian/spring/project/bean/beans.xml");
 
 		Person person = (Person) applicationContext.getBean("person");
-		person.speak();
+		System.out.println(person);
 		((ClassPathXmlApplicationContext) applicationContext).close();
 	}
 }
