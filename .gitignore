@@ -3,6 +3,9 @@
 target/
 .settings
 *.springBeans
+.factorypath
+.project
+.springBeans
 
 # Eclipse Core      
 *.project
