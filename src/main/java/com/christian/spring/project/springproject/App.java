@@ -16,6 +16,9 @@ public class App {
 
 		person.setTaxId(5342);
 		System.out.println(person);
+		
+		Address address2 = (Address)applicationContext.getBean("address2");
+		System.out.println(address2);
 
 		((ClassPathXmlApplicationContext) applicationContext).close();
 	}

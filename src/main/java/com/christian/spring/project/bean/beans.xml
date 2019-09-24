@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="start" default-destroy-method="teardown">
+	default-init-method="start" default-destroy-method="teardown"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 	<bean id="person"
@@ -37,6 +38,10 @@
 		<constructor-arg name="street"
 			value="123 Sesame Street"></constructor-arg>
 		<constructor-arg name="postCode" value="M2K21E"></constructor-arg>
+	</bean>
+	<bean id="address2"
+		class="com.christian.spring.project.springproject.Address"
+		p:street="23 test" p:postCode="6789">
 	</bean>
 
 
