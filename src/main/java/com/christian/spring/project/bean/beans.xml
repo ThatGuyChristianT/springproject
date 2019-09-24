@@ -7,21 +7,41 @@
 
 	<bean id="person"
 		class="com.christian.spring.project.springproject.Person"
-		scope="singleton" init-method="onCreate" destroy-method="onTeardown">
-		<constructor-arg value="777" index="0" name="id" type="int">
+		scope="singleton" init-method="onCreate" destroy-method="onTeardown"
+		factory-method="getInstance">
+		<constructor-arg value="777" index="0" name="id"
+			type="int">
 		</constructor-arg>
-		<constructor-arg value="Christian" index="1" type="String" name="name">
+		<constructor-arg value="Christian" index="1"
+			type="String" name="name">
 		</constructor-arg>
 		<property name="taxId" value="321"></property>
 		<property name="address" ref="address"></property>
 	</bean>
-	
+	<bean id="person2"
+		class="com.christian.spring.project.springproject.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onTeardown"
+		factory-method="createPerson" factory-bean="personFactory">
+		<constructor-arg value="654" index="0" name="id"
+			type="int">
+		</constructor-arg>
+		<constructor-arg value="Christ" index="1"
+			type="String" name="name">
+		</constructor-arg>
+		<property name="taxId" value="321"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+
 	<bean id="address"
 		class="com.christian.spring.project.springproject.Address">
-	<constructor-arg name="street" value="123 Sesame Street"></constructor-arg>
-	<constructor-arg name="postCode" value="M2K21E"></constructor-arg>
+		<constructor-arg name="street"
+			value="123 Sesame Street"></constructor-arg>
+		<constructor-arg name="postCode" value="M2K21E"></constructor-arg>
 	</bean>
-	
 
-	
+
+
+	<bean id="personFactory"
+		class="com.christian.spring.project.springproject.PersonFactory">
+	</bean>
 </beans>
