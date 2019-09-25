@@ -42,11 +42,24 @@
 	<bean id="address2"
 		class="com.christian.spring.project.springproject.Address"
 		p:street="23 test" p:postCode="6789">
-	</bean>
-
+</bean>
 
 
 	<bean id="personFactory"
 		class="com.christian.spring.project.springproject.PersonFactory">
+	</bean>
+	
+	<bean id="fruitBasket"
+		class="com.christian.spring.project.springproject.FruitBasket"
+		lazy-init="default">
+	<constructor-arg value="Christian's basket"></constructor-arg>
+	<constructor-arg>
+		<list>
+			<value>Orange</value>
+			<value>Apple</value>
+			<value>Banana</value>
+			<value>Kiwi</value>
+		</list>
+	</constructor-arg>
 	</bean>
 </beans>
